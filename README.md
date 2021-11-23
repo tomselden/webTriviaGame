@@ -1,4 +1,5 @@
 # webTriviaGame
+
 Description
 ----------
 trivia game with a timer and three seperate categories to choose from 
@@ -13,6 +14,11 @@ Goals
 -shows users current score somewhere 
 -takes the users highest score in each category and displays it on respective category option
 -app should congratulate user if they beat their high score in a certain category 
+-user can acquire a 'skip' card if they answer multiple questions in a row correctly, skip can be used to skip a question and gain points from it still
+-some sort of music in the background 
+
+
+
 
 
 completed
