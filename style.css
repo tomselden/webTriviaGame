@@ -1,5 +1,5 @@
 :root {
-    background-color: rgb(29, 26, 26);
+    background-color: black;
 
 }
 
@@ -8,7 +8,7 @@
     margin: 0;
     padding: 0;
     font-size: 62.5%;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 h1 {
@@ -27,6 +27,11 @@ h1 {
     max-width: 80rem;
     margin: 0 auto;
     padding: 2rem;
+    transition: background-color 3s;
+}
+
+.container:hover {
+    background-color: purple;
 }
 
 .flex-column {
@@ -46,7 +51,10 @@ h1 {
     text-align: center;
     margin-bottom: 1rem;
     text-decoration: none;
-    color: orange;
+    color: orangered;
+    background-color: yellow;
+    border: 5px solid red;
+    border-radius: 4px;
   
 }
 
@@ -58,6 +66,9 @@ h1 {
     margin-bottom: 1rem;
     text-decoration: none;
     color: blueviolet;
+    background-color: white;
+    border: 5px solid red;
+    border-radius: 4px;
   
 
 }
@@ -69,7 +80,34 @@ h1 {
     text-align: center;
     margin-bottom: 1rem;
     text-decoration: none;
-    color: whitesmoke;
+    color: white;
+    background-color: blue;
+    border: 5px solid red;
+    border-radius: 4px;
 
+
+}
+
+.historyBtn:hover {
+    cursor: pointer;
+    box-shadow: 0 0.4rem 1.4rem 0 white;
+    transition: transform 150ms;
+    transform: scale(1.06);
+
+}
+
+.disneyBtn:hover {
+    cursor: pointer;
+    box-shadow: 0 0.4rem 1.4rem 0 white;
+    transition: transform 150ms;
+    transform: scale(1.06);
+
+}
+
+.nbaBtn:hover {
+    cursor: pointer;
+    box-shadow: 0 0.4rem 1.4rem 0 white;
+    transition: transform 150ms;
+    transform: scale(1.06);
 
 }
