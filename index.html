@@ -4,18 +4,27 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Quiz Time!</title>
     <link rel="stylesheet" href="style.css" />
+    <title>Quiz Game!</title>
   </head>
   <body>
     <div class="container">
-      <div id="home" class="flex-column flex-center">
-        <h1>Get Ready to Quiz!</h1>
-        <a href="game-page.html" class="nbaBtn">NBA Quiz!</a>
-        <a href="game-page.html" class="disneyBtn">Disney Quiz!</a>
-        <a href="game-page.html" class="historyBtn">US History Quiz!</a>
+      <div id="question-container" class="hide">
+          <div id="question">question</div>
+        <div id="answer-buttons" class="btn-grid">
+          <button class="btn">Answer 1</button>
+          <button class="btn">Answer 2</button>
+          <button class="btn">Answer 3</button>
+          <button class="btn">Answer 4</button>
+        </div>
+      </div>
+      <div class="controls">
+        <button id="nba" class="start btn">NBA Quiz</button>
+        <button id="disney" class="start btn">DISNEY Quiz</button>
+        <button id="history" class="start btn">HISTORY Quiz</button>
+        <button id="next" class="next btn hide">Next Question</button>
       </div>
     </div>
-    <script src="app.js"></script>
   </body>
+  <script src="app.js"></script>
 </html>

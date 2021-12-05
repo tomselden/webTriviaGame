@@ -1,113 +1,88 @@
-:root {
-    background-color: black;
-
-}
-
-* {
+*, *::before, *::after {
     box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    font-size: 62.5%;
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-family: 'Courier New', Courier, monospace;
 }
 
-h1 {
-    text-align: center;
-    color: red;
-    font-size: 5.4rem;
-    margin-bottom: 5rem;
+body {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background-color: darkblue;
+    color: white;
+    font-size: xx-large;
+}
+
+body.correct {
+    background-color: rgb(1, 228, 1);
+}
+
+body.incorrect {
+    background-color: rgb(163, 1, 1);
 }
 
 .container {
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    max-width: 80rem;
-    margin: 0 auto;
-    padding: 2rem;
-    transition: background-color 3s;
+    width: 800px;
+    max-width: 80%;
+    background-color: black;
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 0 0 10px 2px;
 }
 
-.container:hover {
-    background-color: purple;
+.btn-grid {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    gap: 10px;
+    margin: 20px 0;
 }
 
-.flex-column {
-    display: flex;
-    flex-direction: column;
-}
-
-.flex-center {
-    justify-content: center;
-    align-items: center;
-}
-
-.nbaBtn {
-    font-size: 2.4rem;
-    padding: 2rem 0;
-    width: 30rem;
-    text-align: center;
-    margin-bottom: 1rem;
-    text-decoration: none;
-    color: orangered;
-    background-color: yellow;
-    border: 5px solid red;
-    border-radius: 4px;
-  
-}
-
-.disneyBtn {
-    font-size: 2.4rem;
-    padding: 2rem 0;
-    width: 30rem;
-    text-align: center;
-    margin-bottom: 1rem;
-    text-decoration: none;
-    color: blueviolet;
-    background-color: white;
-    border: 5px solid red;
-    border-radius: 4px;
-  
-
-}
-
-.historyBtn {
-    font-size: 2.4rem;
-    padding: 2rem 0;
-    width: 30rem;
-    text-align: center;
-    margin-bottom: 1rem;
-    text-decoration: none;
+.btn {
+    border: 3px solid blue;
+    background: black;
     color: white;
-    background-color: blue;
-    border: 5px solid red;
-    border-radius: 4px;
-
-
-}
-
-.historyBtn:hover {
-    cursor: pointer;
-    box-shadow: 0 0.4rem 1.4rem 0 white;
-    transition: transform 150ms;
-    transform: scale(1.06);
+    border-radius: 8px;
+    font-size: larger;
+    font-weight: bold;
 
 }
 
-.disneyBtn:hover {
-    cursor: pointer;
-    box-shadow: 0 0.4rem 1.4rem 0 white;
-    transition: transform 150ms;
-    transform: scale(1.06);
+.btn:hover {
+    border-color: white;
+}
+
+.btn.correct {
+    background-color: rgb(1, 228, 1);
+    color: black;
+}
+
+.btn.incorrect {
+    background-color: rgb(163, 1, 1);
+}
+
+.nba, .disney, .history, .next {
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: 10px 20px;
+    width: 30%;
+    display: inline-block;
+    margin: auto;
 
 }
 
-.nbaBtn:hover {
-    cursor: pointer;
-    box-shadow: 0 0.4rem 1.4rem 0 white;
-    transition: transform 150ms;
-    transform: scale(1.06);
+.controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
+.hide {
+    display: none;
+}
+
+#question-container {
+    text-align: center;
 }
