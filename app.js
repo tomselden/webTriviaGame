@@ -9,7 +9,10 @@ const answerButtonsElement = document.getElementById("answer-buttons");
 const scoreElement = document.getElementById("score");
 const scoreText = document.getElementById("scoreText");
 
+// setting score to 0 
 var score = 0;
+
+// declaring changeable variables
 let shuffledQuestions;
 let currentQuestionIndex;
 
@@ -297,7 +300,7 @@ const historyQuestions = [
   },
 ];
 
-// event listeners
+// event listeners for quiz category
 nbaButton.addEventListener("click", () => {
   let quizType = document.getElementById("nba");
   startGame(nbaQuestions);
@@ -315,6 +318,7 @@ nextButton.addEventListener("click", () => {
   setNextQuestion();
 });
 
+// starts quiz game and hides quiz category buttons
 function startGame(quizType) {
   score = 0;
   scoreElement.classList.remove("hide");
@@ -323,18 +327,27 @@ function startGame(quizType) {
   nbaButton.classList.add("hide");
   disneyButton.classList.add("hide");
   historyButton.classList.add("hide");
+  // randomizes questions by getting a random number with math.random and 
+  // subtracts it by .5 giving us a random question in the question array
+  // which then assign it to shuffled questions
   shuffledQuestions = quizType.sort(() => Math.random() - 0.5);
+  // setting question counter to 0
   currentQuestionIndex = 0;
   questionContainer.classList.remove("hide");
   setNextQuestion();
 }
 
+// calls reset quiz function to clear quiz's previous questions and answers 
+// and passes shuffled 
 function setNextQuestion() {
   resetQuiz();
   showQuestion(shuffledQuestions[currentQuestionIndex]);
 }
 
+// shows next question after it is cleared by the reset quiz function
 function showQuestion(question) {
+  // setting the score in the html to whatever the score counter is here
+  // doing it here so that the user can see the score increment before hitting the next button
   scoreElement.innerHTML = score;
   questionElement.innerText = question.question;
   question.answers.forEach((answer) => {
@@ -358,6 +371,7 @@ function resetQuiz() {
   }
 }
 
+// checks the user's selected answer to see if it is correct or incorrect
 function selectAnswer(e) {
   const selectedButton = e.target;
   const correct = selectedButton.dataset.correct;
@@ -369,6 +383,9 @@ function selectAnswer(e) {
 
   playSound(correct);
 
+  // if currentQuestionIndex is less then shuffledQuestions.length then the next button should appear
+  // else start quiz end game by showing user the score message and waiting for setTimeout function to restart
+  // the quiz
   if (shuffledQuestions.length > currentQuestionIndex + 1) {
     nextButton.classList.remove("hide");
   } else {
@@ -390,6 +407,9 @@ function selectAnswer(e) {
   }
 }
 
+// checks to see if the answer the user chose is correct or incorrect, then changes the 
+// correct answer(s) to green and the incorrect answers to red, also changes body color background
+// appropiately
 function setStatusClass(element, correct) {
   clearStatusClass(element);
   if (correct) {
@@ -399,6 +419,8 @@ function setStatusClass(element, correct) {
   }
 }
 
+// checks to see if the answer the user chose is correct or incorrect, then plays
+// associated music
 function playSound(correct) {
   if (correct) {
     new Audio("assets/mp3-now.com - Correct answer Sound effect.mp4").play();
@@ -409,6 +431,7 @@ function playSound(correct) {
   }
 }
 
+// clears green color on correct answer and red color on incorrect answer back to original state
 function clearStatusClass(element) {
   element.classList.remove("correct");
   element.classList.remove("incorrect");
