@@ -76,6 +76,9 @@ body.incorrect {
 .score {
     text-align: center;
     color: red;
+    font-weight: bold;
+    padding-bottom: 1%;
+    transform: scale(3, 3)
 }
 
 .controls {
@@ -92,6 +95,12 @@ body.incorrect {
     text-align: center;
 }
 
+#scoreText {
+    text-align: center;
+    color: red;
+    font-weight: bold;
+}
+
 .large-box {
-    font-size: xx-large;
+    transform: scale(3, 3);
 }

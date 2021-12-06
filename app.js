@@ -7,6 +7,7 @@ const questionContainer = document.getElementById("question-container");
 const questionElement = document.getElementById("question");
 const answerButtonsElement = document.getElementById("answer-buttons");
 const scoreElement = document.getElementById("score");
+const scoreText = document.getElementById("scoreText");
 
 var score = 0;
 let shuffledQuestions;
@@ -181,7 +182,8 @@ const disneyQuestions = [
     ],
   },
   {
-    question: "Who is the young man who takes from the rich and gives to the needy?",
+    question:
+      "Who is the young man who takes from the rich and gives to the needy?",
     answers: [
       { text: "Goofy", correct: false },
       { text: "Tom Cruz", correct: false },
@@ -247,7 +249,8 @@ const historyQuestions = [
     ],
   },
   {
-    question: "Who Was The Famous Actor That Became The Governor Of California In 2003?",
+    question:
+      "Who Was The Famous Actor That Became The Governor Of California In 2003?",
     answers: [
       { text: "Arnold Schwarzenegger", correct: true },
       { text: "Joe Biden", correct: false },
@@ -256,7 +259,8 @@ const historyQuestions = [
     ],
   },
   {
-    question: "Jack The Ripper Is The Name Of A Serial Killer That Terrorized What City In 1888?",
+    question:
+      "Jack The Ripper Is The Name Of A Serial Killer That Terrorized What City In 1888?",
     answers: [
       { text: "Naples", correct: false },
       { text: "New York City", correct: false },
@@ -314,6 +318,7 @@ nextButton.addEventListener("click", () => {
 function startGame(quizType) {
   score = 0;
   scoreElement.classList.remove("hide");
+  scoreText.classList.remove("hide");
   console.log("started");
   nbaButton.classList.add("hide");
   disneyButton.classList.add("hide");
@@ -367,10 +372,10 @@ function selectAnswer(e) {
   if (shuffledQuestions.length > currentQuestionIndex + 1) {
     nextButton.classList.remove("hide");
   } else {
-    questionElement.classList.add("large-box");
-    questionElement.innerText = `Quiz Complete: You've correctly answered ${score} correctly out of ${nbaQuestions.length} !!!`;
+    questionElement.innerText = `Quiz Complete: You've correctly answered ${score} out of ${nbaQuestions.length} !`;
     answerButtonsElement.classList.add("hide");
     scoreElement.classList.add("hide");
+    scoreText.classList.add("hide");
     setTimeout(function () {
       resetQuiz();
       answerButtonsElement.classList.remove("hide");
