@@ -73,7 +73,10 @@ body.incorrect {
 
 }
 
-
+.score {
+    text-align: center;
+    color: red;
+}
 
 .controls {
     display: flex;
@@ -87,4 +90,8 @@ body.incorrect {
 
 #question-container {
     text-align: center;
+}
+
+.large-box {
+    font-size: xx-large;
 }
