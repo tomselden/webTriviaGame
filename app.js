@@ -381,7 +381,7 @@ function selectAnswer(e) {
       disneyButton.classList.remove("hide");
       historyButton.innerText = "History Quiz";
       historyButton.classList.remove("hide");
-    }, 3000);
+    }, 6000);
   }
 }
 
