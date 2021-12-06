@@ -75,7 +75,7 @@ body.incorrect {
 
 .score {
     text-align: center;
-    color: red;
+    color: rgb(4, 221, 4);
     font-weight: bold;
     padding-bottom: 1%;
     transform: scale(3, 3)
@@ -97,7 +97,7 @@ body.incorrect {
 
 #scoreText {
     text-align: center;
-    color: red;
+    color: white;
     font-weight: bold;
 }
 
