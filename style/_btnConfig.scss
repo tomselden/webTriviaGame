@@ -1,0 +1,28 @@
+@import "utilities";
+@import "config";
+
+
+.btn-grid {
+	display: grid;
+	grid-template-columns: repeat(2, auto);
+	gap: 10px;
+	margin: 20px 0;
+}
+.btn {
+	border: $button-border;
+	background: $quiz-black;
+	color: $text-color;
+	border-radius: 8px;
+	font-size: larger;
+	font-weight: bold;
+	&:hover {
+		border-color: $text-color;
+	}
+}
+.btn.correct {
+	background-color: $correct-color;
+	color: $quiz-black;
+}
+.btn.incorrect {
+	background-color: $incorrect-color;
+}

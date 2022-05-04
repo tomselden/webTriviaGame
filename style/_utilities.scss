@@ -1,0 +1,47 @@
+@import "config";
+
+@mixin body($pad, $margin, $display, $width, $size) {
+	padding: $pad;
+	margin: $margin;
+	display: $display;
+	width: $width;
+	height: $size;
+	
+}
+
+
+@mixin score($text, $font, $padding) {
+	text-align: $text;
+	font-weight: $font;
+	padding-bottom: $padding;
+}
+
+body {
+	@include body(0, 0, flex, 100vw, 100vh);
+	justify-content: center;
+	align-items: center;
+	background-color: $primary-color;
+	color: $text-color;
+	font-size: xx-large;
+}
+body.correct {
+	background-color: $correct-color;
+}
+body.incorrect {
+	background-color: $incorrect-color;
+}
+
+.score {
+    @include score(center, bold, 1%);
+    color: $score-color;
+    transform: $bigger-box
+}
+
+.container {
+	width: 800px;
+	max-width: 80%;
+	background-color: $quiz-black;
+	border-radius: 5px;
+	padding: 10px;
+	box-shadow: 0 0 10px 2px;
+}

@@ -1,0 +1,19 @@
+$font-stack: 'Courier New', Courier, monospace;
+
+
+$primary-color: darkblue;
+$text-color: white;
+$correct-color: rgb(4, 221, 4);
+$incorrect-color: rgb(216, 0, 0);
+$quiz-black: black;
+$score-color: rgba(4, 221, 8, 0.435);
+$bigger-box: scale(3, 3);
+
+
+$button-border: 3px solid blue;
+
+.element {
+    @debug $font-stack; // list of fonts
+    @debug $text-color; // color of quiz text
+    @debug $button-border; // border of button
+}

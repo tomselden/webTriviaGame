@@ -1,0 +1,52 @@
+@import "config";
+@import "btnConfig";
+@import "utilities";
+
+* {
+	box-sizing: border-box;
+	font-family: $font-stack;
+	&::before {
+		box-sizing: border-box;
+		font-family: $font-stack;
+	}
+	&::after {
+		box-sizing: border-box;
+		font-family: $font-stack;
+	}
+}
+
+.nba, .disney, .history, .next {
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: 10px 20px;
+    width: 30%;
+    display: inline-block;
+    margin: auto;
+
+}
+
+
+
+.controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hide {
+    display: none;
+}
+
+#question-container {
+    text-align: center;
+}
+
+#scoreText {
+    text-align: center;
+    color: $text-color;
+    font-weight: bold;
+}
+
+.large-box {
+    transform: $bigger-box;
+}

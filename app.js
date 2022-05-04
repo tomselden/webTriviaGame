@@ -9,7 +9,7 @@ const answerButtonsElement = document.getElementById("answer-buttons");
 const scoreElement = document.getElementById("score");
 const scoreText = document.getElementById("scoreText");
 
-// setting score to 0 
+// setting score to 0
 var score = 0;
 
 // declaring changeable variables
@@ -313,6 +313,9 @@ historyButton.addEventListener("click", () => {
   let quizType = document.getElementById("history");
   startGame(historyQuestions);
 });
+makeYourOwnQuizButton.addEventListener("click", () => {
+  // makeCustomQuiz()
+});
 nextButton.addEventListener("click", () => {
   currentQuestionIndex++;
   setNextQuestion();
@@ -327,7 +330,7 @@ function startGame(quizType) {
   nbaButton.classList.add("hide");
   disneyButton.classList.add("hide");
   historyButton.classList.add("hide");
-  // randomizes questions by getting a random number with math.random and 
+  // randomizes questions by getting a random number with math.random and
   // subtracts it by .5 giving us a random question in the question array
   // which then assign it to shuffled questions
   shuffledQuestions = quizType.sort(() => Math.random() - 0.5);
@@ -337,8 +340,8 @@ function startGame(quizType) {
   setNextQuestion();
 }
 
-// calls reset quiz function to clear quiz's previous questions and answers 
-// and passes shuffled 
+// calls reset quiz function to clear quiz's previous questions and answers
+// and passes shuffled
 function setNextQuestion() {
   resetQuiz();
   showQuestion(shuffledQuestions[currentQuestionIndex]);
@@ -407,7 +410,7 @@ function selectAnswer(e) {
   }
 }
 
-// checks to see if the answer the user chose is correct or incorrect, then changes the 
+// checks to see if the answer the user chose is correct or incorrect, then changes the
 // correct answer(s) to green and the incorrect answers to red, also changes body color background
 // appropiately
 function setStatusClass(element, correct) {
@@ -436,3 +439,5 @@ function clearStatusClass(element) {
   element.classList.remove("correct");
   element.classList.remove("incorrect");
 }
+
+
