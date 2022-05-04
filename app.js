@@ -9,7 +9,8 @@ const answerButtonsElement = document.getElementById("answer-buttons");
 const scoreElement = document.getElementById("score");
 const scoreText = document.getElementById("scoreText");
 
-// setting score to 0
+
+// setting score to 0 
 var score = 0;
 
 // declaring changeable variables
@@ -313,9 +314,14 @@ historyButton.addEventListener("click", () => {
   let quizType = document.getElementById("history");
   startGame(historyQuestions);
 });
+<<<<<<< HEAD
 makeYourOwnQuizButton.addEventListener("click", () => {
   // makeCustomQuiz()
 });
+=======
+
+// event listener for the next button
+>>>>>>> fe325d5ead8245477303f57519a0dfad2b4599b4
 nextButton.addEventListener("click", () => {
   currentQuestionIndex++;
   setNextQuestion();
@@ -330,7 +336,11 @@ function startGame(quizType) {
   nbaButton.classList.add("hide");
   disneyButton.classList.add("hide");
   historyButton.classList.add("hide");
+<<<<<<< HEAD
   // randomizes questions by getting a random number with math.random and
+=======
+  // randomizes questions by getting a random number with math.random and 
+>>>>>>> fe325d5ead8245477303f57519a0dfad2b4599b4
   // subtracts it by .5 giving us a random question in the question array
   // which then assign it to shuffled questions
   shuffledQuestions = quizType.sort(() => Math.random() - 0.5);
@@ -339,9 +349,14 @@ function startGame(quizType) {
   questionContainer.classList.remove("hide");
   setNextQuestion();
 }
+<<<<<<< HEAD
 
 // calls reset quiz function to clear quiz's previous questions and answers
 // and passes shuffled
+=======
+// calls reset quiz function to clear quiz's previous questions and answers 
+// and passes shuffled 
+>>>>>>> fe325d5ead8245477303f57519a0dfad2b4599b4
 function setNextQuestion() {
   resetQuiz();
   showQuestion(shuffledQuestions[currentQuestionIndex]);
@@ -386,6 +401,8 @@ function selectAnswer(e) {
 
   playSound(correct);
 
+
+
   // if currentQuestionIndex is less then shuffledQuestions.length then the next button should appear
   // else start quiz end game by showing user the score message and waiting for setTimeout function to restart
   // the quiz
@@ -409,6 +426,7 @@ function selectAnswer(e) {
     }, 6000);
   }
 }
+
 
 // checks to see if the answer the user chose is correct or incorrect, then changes the
 // correct answer(s) to green and the incorrect answers to red, also changes body color background
