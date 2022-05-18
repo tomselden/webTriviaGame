@@ -25,5 +25,7 @@ Hosted Here
 ---------------
 https://tomselden.github.io/webTriviaGame/
 
-
-
+Issues/Bugs
+---------------
+* App doesn't stop user from answering a question multiple times
+* Css issues when you restart the quiz
