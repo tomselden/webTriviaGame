@@ -9,11 +9,11 @@ const answerButtonsElement = document.getElementById("answer-buttons");
 const scoreElement = document.getElementById("score");
 const scoreText = document.getElementById("scoreText");
 
-
-// setting score to 0 
+// setting score to 0
 var score = 0;
 
 // declaring changeable variables
+
 let shuffledQuestions;
 let currentQuestionIndex;
 
@@ -66,48 +66,13 @@ const nbaQuestions = [
     ],
   },
   {
-    question: "Where did LeBron James play before the NBA?",
+    question:
+      "Stephen Curry led all rookies in which category for the 2009-10 NBA season?",
     answers: [
-      { text: "High School", correct: true },
-      { text: "UNC", correct: false },
-      { text: "UCLA", correct: false },
-      { text: "Harvard", correct: false },
-    ],
-  },
-  {
-    question: "What player has the most career assists?",
-    answers: [
-      { text: "John Stockton", correct: true },
-      { text: "Chris Paul", correct: false },
-      { text: "Udonis Haslem", correct: false },
-      { text: "George Gerving", correct: false },
-    ],
-  },
-  {
-    question: "What player has the highest career PPG(Points Per Game)?",
-    answers: [
-      { text: "Lebron James", correct: false },
-      { text: "Michael Jordan", correct: true },
-      { text: "Magic Johnson", correct: false },
-      { text: "Larry Bird", correct: false },
-    ],
-  },
-  {
-    question: "What team has the most NBA Finals appearances?",
-    answers: [
-      { text: "Celtics", correct: false },
-      { text: "Suns", correct: false },
-      { text: "Lakers", correct: true },
-      { text: "Knicks", correct: false },
-    ],
-  },
-  {
-    question: "Who has the most career rebounds?",
-    answers: [
-      { text: "Luka Doncic", correct: false },
-      { text: "Julius Randle", correct: false },
-      { text: "Kevin Durant", correct: false },
-      { text: "Wilt Chamberlain", correct: true },
+      { text: "Rebounds", correct: false },
+      { text: "Steals", correct: true },
+      { text: "Threes", correct: false },
+      { text: "Points", correct: false },
     ],
   },
 ];
@@ -149,6 +114,7 @@ const disneyQuestions = [
       { text: "Mailbox", correct: false },
     ],
   },
+
   {
     question: "How many dwarfs does Snow White live with?",
     answers: [
@@ -312,16 +278,14 @@ disneyButton.addEventListener("click", () => {
 });
 historyButton.addEventListener("click", () => {
   let quizType = document.getElementById("history");
-  startGame(historyQuestions);
+  startGame(nbaQuestions);
 });
-<<<<<<< HEAD
+
 makeYourOwnQuizButton.addEventListener("click", () => {
   // makeCustomQuiz()
 });
-=======
 
 // event listener for the next button
->>>>>>> fe325d5ead8245477303f57519a0dfad2b4599b4
 nextButton.addEventListener("click", () => {
   currentQuestionIndex++;
   setNextQuestion();
@@ -336,11 +300,8 @@ function startGame(quizType) {
   nbaButton.classList.add("hide");
   disneyButton.classList.add("hide");
   historyButton.classList.add("hide");
-<<<<<<< HEAD
+
   // randomizes questions by getting a random number with math.random and
-=======
-  // randomizes questions by getting a random number with math.random and 
->>>>>>> fe325d5ead8245477303f57519a0dfad2b4599b4
   // subtracts it by .5 giving us a random question in the question array
   // which then assign it to shuffled questions
   shuffledQuestions = quizType.sort(() => Math.random() - 0.5);
@@ -349,20 +310,14 @@ function startGame(quizType) {
   questionContainer.classList.remove("hide");
   setNextQuestion();
 }
-<<<<<<< HEAD
 
 // calls reset quiz function to clear quiz's previous questions and answers
 // and passes shuffled
-=======
-// calls reset quiz function to clear quiz's previous questions and answers 
-// and passes shuffled 
->>>>>>> fe325d5ead8245477303f57519a0dfad2b4599b4
 function setNextQuestion() {
   resetQuiz();
   showQuestion(shuffledQuestions[currentQuestionIndex]);
 }
 
-// shows next question after it is cleared by the reset quiz function
 function showQuestion(question) {
   // setting the score in the html to whatever the score counter is here
   // doing it here so that the user can see the score increment before hitting the next button
@@ -401,8 +356,6 @@ function selectAnswer(e) {
 
   playSound(correct);
 
-
-
   // if currentQuestionIndex is less then shuffledQuestions.length then the next button should appear
   // else start quiz end game by showing user the score message and waiting for setTimeout function to restart
   // the quiz
@@ -413,9 +366,9 @@ function selectAnswer(e) {
     answerButtonsElement.classList.add("hide");
     scoreElement.classList.add("hide");
     scoreText.classList.add("hide");
+    questionElement.innerText = `Quiz Complete: You've correctly answered _______ correctly out of ${nbaQuestions.length} !!!`;
     setTimeout(function () {
       resetQuiz();
-      answerButtonsElement.classList.remove("hide");
       questionContainer.classList.add("hide");
       nbaButton.innerText = "NBA Quiz";
       nbaButton.classList.remove("hide");
@@ -426,7 +379,6 @@ function selectAnswer(e) {
     }, 6000);
   }
 }
-
 
 // checks to see if the answer the user chose is correct or incorrect, then changes the
 // correct answer(s) to green and the incorrect answers to red, also changes body color background
@@ -445,9 +397,8 @@ function setStatusClass(element, correct) {
 function playSound(correct) {
   if (correct) {
     new Audio("assets/mp3-now.com - Correct answer Sound effect.mp4").play();
-    score++;
-    scoreElement.innerHTML = score;
-  } else {
+  }
+  if (correct === false) {
     new Audio("assets/mp3-now.com - Wrong Buzzer  Sound Effect.mp4").play();
   }
 }
@@ -457,5 +408,3 @@ function clearStatusClass(element) {
   element.classList.remove("correct");
   element.classList.remove("incorrect");
 }
-
-
